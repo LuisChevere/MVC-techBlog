@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
+//gets home route
 router.get('/', (req, res) => {
     Post.findAll({
         attributes: ['id', 'title', 'content', 'created_at'],
@@ -28,6 +29,7 @@ router.get('/', (req, res) => {
         });
 });
 
+//Gets a singular post
 router.get('/post/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -64,6 +66,7 @@ router.get('/post/:id', (req, res) => {
     });
 });
 
+//Gets login
 router.get('/login', (res, req) => {
     if(req.session.loggedIn) {
         res.redirect('/');
@@ -71,3 +74,18 @@ router.get('/login', (res, req) => {
     }
     res.render('login');
 });
+
+//Gets sign up
+router.get('/signup', (res, req) => {
+    if(req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('signup');
+});
+
+router.get('*', (req, res) => {
+    res.status(404).send("Can't go there!");
+})
+
+module.exports = router;
