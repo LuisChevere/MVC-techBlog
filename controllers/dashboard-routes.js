@@ -65,6 +65,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
         .catch(err => {
             res.status(500).json(err);
         });
-
-
 })
+
+router.get('/new', (req, res) => {
+    res.render('add-post', {loggedIn: true})
+})
+
+module.exports = router;
