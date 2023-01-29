@@ -2,18 +2,18 @@ const path = require('path');
 const express = require('express');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
-const helper = require('./utils/helpers');
+const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({ helpers});
+const hbs = exphbs.create({helpers});
 const session = require('express-session');
 const exp = require('constants');
 const SequilizeStore = require('connect-session-sequelize')(session.Store);
 
-const sees = {
+const sess = {
     secret: process.env.DB_SECRET,
     cookie: {},
     resave: false,
-    saveUninitialize: true,
+    saveUninitialized: true,
     store: new SequilizeStore({
         db: sequelize,
         checkExpirationInterval: 1000 * 60 *10, //will check every 10 mins
