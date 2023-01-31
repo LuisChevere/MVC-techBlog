@@ -67,8 +67,8 @@ router.get('/post/:id', (req, res) => {
 });
 
 //Gets login
-router.get('/login', (res, req) => {
-    if(req.session.loggedIn) {
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
@@ -76,7 +76,7 @@ router.get('/login', (res, req) => {
 });
 
 //Gets sign up
-router.get('/signup', (res, req) => {
+router.get('/signup', (req, res) => {
     if(req.session.loggedIn) {
         res.redirect('/');
         return;
