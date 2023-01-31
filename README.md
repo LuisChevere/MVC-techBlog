@@ -18,8 +18,8 @@
 
   ## Usage
   This application can be used to write any blog about tech.<br />
-  [Launch Site]()<br />
-  ![Screenshot]()<br />
+  [Launch Site](https://tech-bloglc.herokuapp.com/)<br />
+  ![Screenshot](https://raw.githubusercontent.com/LuisChevere/MVC-techBlog/f1a3b92f819cf32146fae60304c03fe0a9effb24/public/images/techblog.png)<br />
 
   ## Contributions
   If interested in contributing, please feel free to clone.<br />
